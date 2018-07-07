@@ -1,0 +1,61 @@
+.table{
+    background-color: rgba(40, 190, 60, 0.959);
+    margin-top: 15px;
+    color: rgb(10, 9, 9);
+    font-family: monospace;
+    font-size: 18px;
+    border: 1px;
+    border-color: black;
+}
+
+.btn{
+    
+    width:100px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+.form-group{
+    margin-left: 40px;
+}
+.form-control{
+    width:100px;  
+}
+input[type=submit] {
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+input[type=submit]:hover {
+    background-color: #5cee4fcb;
+}
+input[type=submit]{
+    background-color:#2758c2cb;
+    width: 100px;
+}
+
+.date{
+    width:170px;
+}
+.update{
+    background-color: rgba(19, 146, 36, 0.884);
+    border-color: black;
+    border-bottom-color: black;
+}
+.rowValue{
+    color: green;
+}
+.balck{
+    color: black;
+}
+.green{
+    color: green;
+}
+p{
+    font-family: serif;
+}

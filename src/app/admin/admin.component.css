@@ -1,0 +1,46 @@
+.table{
+    background-color: rgba(115, 241, 225, 0.616);
+    margin-top: 15px;
+    color: rgb(10, 9, 9);
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.btn{
+    
+    width:100px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+.form-group{
+    margin-left: 40px;
+}
+.form-control{
+    width:80px;  
+}
+input[type=submit] {
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+input[type=submit]:hover {
+    background-color: #5df34fcb;
+}
+input[type=submit]{
+    background-color:#2758c2cb;
+    width: 100px;
+}
+
+.date{
+    width:170px;
+}
+.but{
+   margin-top: 50px;
+   width:150px;
+}

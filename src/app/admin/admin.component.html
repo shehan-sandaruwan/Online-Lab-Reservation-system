@@ -1,0 +1,110 @@
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="card w-75" >
+            <div class="card-body" style="margin-right:15px;">
+              <h3 class="card-title" style="color:rgb(14, 165, 82); ">LAB Reservations</h3>
+              <hr style=" border-width: 2px;">
+              <p style="color: rgb(14, 165, 82)">All Labs Reservations Details</p>
+              <hr style=" border-width: 2px;">
+              <form class="form-inline" >
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search(selectedCategory.value,Adate,AstartTime); ">
+                      <span class="glyphicon glyphicon-search"></span>
+                    Search
+                  </button>
+                  <div class="form-group ">
+                      <label for="inputState" >Lab</label>     
+                      <select id="inputState" class="form-control number" [(ngModel)]= "lab"  name="lab" #selectedCategory style="width:100px; height:30px;" >
+                        <option *ngFor = "let k of reservations" [value]="k.lab">{{k.lab}}</option>
+                      </select>
+                    </div>
+                  <div class="form-group" >
+                    <label for="inputPassword6">Date</label>
+                    <input type="date" id="inputPassword6" class="form-control mx-sm-3 date" aria-describedby="passwordHelpInline" [(ngModel)]= "Adate" name="Adate" >
+                  </div>
+                  <div class="form-group">
+                      <label for="inputPassword6">From</label>
+                      <input type="time" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline"  [(ngModel)]= "AstartTime" name="AstartTime"   style="width:100px;">
+                  </div>
+                  <hr style=" border-width: 4px;">
+                      <button  type="button" class="btn btn-success but" (click)="downloadPdf(); " *ngIf = "showAdmin">
+                        <span class="glyphicon glyphicon-download"></span>
+                        Download PDF
+                      </button>
+                      <button  type="button" class="btn btn-primary" (click)="clear();" *ngIf= "show">Clear</button>     
+                </form>
+
+              </div>
+            </div>
+            <div id='content' #content>
+          <table class="table" border=1>
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Lab</th>
+                  <th scope="col">
+                      <a  ng-click="sortType = 'date'">
+                        Date
+                        <span ng-show="sortType == 'date'" class="glyphicon glyphicon-triangle-bottom"></span>
+                      </a>
+                  </th>
+                  <th scope="col">
+                      <a  ng-click="sortType = 'date'">
+                          From
+                          <span class="glyphicon glyphicon-triangle-bottom"></span>
+                        </a>
+                      </th>
+                  <th scope="col">
+                      <a  ng-click="sortType = 'date'">
+                          To
+                          <span class="glyphicon glyphicon-triangle-bottom"></span>
+                        </a>
+                  </th>
+                  <th scope="col">Recerved person Email</th>
+                  <th  scope="col">Event</th>
+                </tr>
+              </thead>
+              <ng-container *ngIf= "!isDeleted && !isClear">
+              <tbody>
+                  <tr *ngFor=" let i of reservations" class="rowValue" >
+                    <th scope="row">{{i._id}}</th>
+                    <td>{{i.lab}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.starttime}}</td>
+                    <td>{{i.endtime}}</td>
+                    <td>{{i.email}}</td>
+                    <td> <button type="button" class="btn btn-danger" (click)="Delete(i._id)" *ngIf = "showAdmin">Delete</button> </td>
+                  </tr>
+                </tbody>
+              </ng-container>
+              <ng-container *ngIf= "isDeleted && !isClear ">
+                  <tbody>
+                      <tr *ngFor=" let i of reservations" class="rowValue" >
+                        <th scope="row">{{i._id}}</th>
+                        <td>{{i.lab}}</td>
+                        <td>{{i.date}}</td>
+                        <td>{{i.starttime}}</td>
+                        <td>{{i.endtime}}</td>
+                        <td>{{i.email}}</td>
+                        <td> <button type="button" class="btn btn-danger" (click)="Delete(i._id)">Delete</button></td>
+                      </tr>
+                    </tbody>
+                  </ng-container>
+                  <ng-container *ngIf= "isClear">
+                  <tbody>
+                    <tr *ngFor=" let i of reservations" class="rowValue" >
+                      <th scope="row">{{i._id}}</th>
+                      <td>{{i.lab}}</td>
+                      <td>{{i.date}}</td>
+                      <td>{{i.starttime}}</td>
+                      <td>{{i.endtime}}</td>
+                      <td>{{i.email}}</td>
+                      <td> <button type="button" class="btn btn-danger" (click)="Delete(i._id)">Delete</button></td>
+                    </tr>
+                  </tbody>
+                </ng-container>
+            </table>
+      <p class="lead"></p>   
+      </div>
+    </div>
+  </div>

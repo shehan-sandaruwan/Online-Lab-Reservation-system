@@ -1,0 +1,131 @@
+
+<div class="container ">
+  <div class="jumbotron ">
+      <div class="card w-75">
+          <div class="card-body">
+            <h3 class="card-title">Lab A</h3>
+            <p>Enter the details in following forum and click Add button..!</p>
+            <hr>
+            <form class="form-inline" >
+                <div class="form-group">
+                    <label for="inputPassword6">Number</label>
+                    <input type="number" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline"   [(ngModel)]= "Anumber"  name="Anumber" >
+                  </div>
+                <div class="form-group" >
+                  <label for="inputPassword6">Date</label>
+                  <input type="date" id="inputPassword6" class="form-control mx-sm-3 date" aria-describedby="passwordHelpInline" [(ngModel)]= "Adate" name="Adate" >
+                </div>
+                  <div class="form-group">
+                    <label for="inputPassword6">From</label>
+                    <input type="time" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline"  [(ngModel)]= "AstartTime" name="AstartTime" >
+                  </div>
+                  <div class="form-group">
+                      <label for="inputPassword6">To</label>
+                      <input type="time" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline"  [(ngModel)]= "AendTime" name="AendTime" >
+                    </div>
+                    
+                    <button type="button" class="btn btn-success" (click)="addRow();">Add +</button>
+                    <button  type="button" class="btn btn-primary" (click)="clear();" *ngIf ="show" >Clear</button>
+              
+              </form>
+            </div>
+        </div>
+        <table class="table" border=1>
+            <thead>
+                
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Date</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Recerved person Email</th>
+              </tr>
+             
+            </thead>
+            <ng-container *ngIf= "!isBooked">
+            <tbody>
+                <tr *ngFor = "let i of reservations" >
+                  <th scope="row">{{i._id}}</th>
+                  <td>{{i.date}}</td>
+                  <td>{{i.starttime}}</td>
+                  <td>{{i.endtime}}</td>
+                  <td>{{i.email}}</td>
+                </tr>
+              </tbody>
+            </ng-container>
+            <ng-container *ngIf= "isBooked" >
+              <tbody>
+                  <tr *ngFor = "let i of reservations" >
+                    <th scope="row">{{i._id}}</th>
+                    <td>{{i.date}}</td>
+                    <td>{{i.starttime}}</td>
+                    <td>{{i.endtime}}</td>
+                    <td>{{i.email}}</td>
+                  </tr>
+                </tbody>
+              </ng-container>
+            </table>
+    <p class="lead"></p>
+
+    <div class="card w-75">
+      <div class="card-body">
+        <p>Enter Details and click update button..!</p>
+        <hr>
+        <form class="form-inline" >
+            <div class="form-group ">
+                <label for="inputState" >Id</label>     
+                <select id="inputState" class="form-control number" [(ngModel)]= "number"  name="number">
+                  <option *ngFor = "let k of Update" [value]="k._id">{{k._id}}</option>
+                </select>
+              </div>
+            <div class="form-group date" >
+              <label for="inputPassword6">Date</label>
+              <input type="date" id="inputPassword6" class="form-control mx-sm-3 date" aria-describedby="passwordHelpInline" [(ngModel)]= "date" name="date" >
+            </div>
+            <div class="form-group">
+                <label for="inputPassword6">From</label>
+                <input type="time" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline"  [(ngModel)]= "startTime" name="startTime" >
+              </div>
+              <div class="form-group">
+                  <label for="inputPassword6">To</label>
+                  <input type="time" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline"  [(ngModel)]= "endTime" name="endTime" >
+                </div>
+                <button type="button" class="btn btn-warning" (click)="updateRow(selectedCategory.value);">Update</button>
+          </form>
+        </div>
+    </div>
+    <table class="table update " border=1>
+      <thead>
+        <tr >
+          <th scope="col">Id</th>
+          <th scope="col">Date</th>
+          <th scope="col">From</th>
+          <th scope="col">To</th>
+          <th scope="col">Recerved person Email</th>
+        </tr>
+      </thead>
+      <ng-container *ngIf= "!isTableUpdate">
+      <tbody>
+          <tr *ngFor = "let j of Update"  ng-class="{black: isTableUpdate == true, green: isTableUpdate == false}">
+            <th scope="row">{{j._id}}</th>
+            <td>{{j.date}}</td>
+            <td>{{j.starttime}}</td>
+            <td>{{j.endtime}}</td>
+            <td>{{j.email}}</td>
+          </tr>
+        </tbody>
+       </ng-container>
+        <ng-container *ngIf= "isTableUpdate">
+        <tbody>
+          <tr   *ngFor = "let j of Update"   ng-class="{black: isTableUpdate == false, green: isTableUpdate == true}">
+            <th scope="row">{{j._id}}</th>
+            <td>{{j.date}}</td>
+            <td>{{j.starttime}}</td>
+            <td>{{j.endtime}}</td>
+            <td>{{j.email}}</td>
+          </tr>
+        </tbody>
+      </ng-container>
+    </table>   
+  </div>
+</div>

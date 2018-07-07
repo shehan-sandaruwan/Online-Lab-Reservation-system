@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+   
+}
+
+
+.header {
+    border: 1px solid black;
+    background-color: #b4b4c5;
+    margin-left: 350px;
+   
+}
+img{
+    width: 80px;
+    height:75px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 335px auto auto auto;
+    grid-gap: 10px;
+    background-color: #3d5c5c;;
+    height:80px ;
+    color:white;
+  }
+.grid-container > div {
+    padding-top: 10px;
+    background-color:  #669999;
+    text-align: center;
+    font-size: 30px;
+  }
+.list-group-item{
+    border-width: 2px;
+    background-color: #f8af12b9;
+    padding: 30px;
+    color: rgb(245, 223, 223);
+    font-size: 20px;
+}
+.btn-primary{
+    background-color: rgba(238, 124, 17, 0.726);
+    border: white;
+    border-width: 2px;
+}
+.row::after {
+    padding: 10px;
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    border: 2px solid rgb(4, 50, 56);
+}
+.col-sm-6{
+    padding: 10px;
+}
+.col-1 {
+    width: 8.33%;
+}
+.col-2 {
+    width: 16.66%;
+}
+.col-3 {
+    background-color: #476b6b;
+    width: 350px;;
+    height:max-content;
+}
+.col-4 {
+    width: 33.33%;
+}
+.col-5 {
+    width: 41.66%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.33%;
+}
+.col-8 {
+    width: 66.66%;
+}
+.col-9 {
+    width: 75%;
+    height:max-content;
+    padding: 40px;
+    background-image:url('../../assets/Images/lab3.jpg');
+    background-repeat: no-repeat;
+
+}
+.col-10 {
+    width: 83.33%;
+}
+.col-11 {
+    width: 91.66%;
+}
+.col-12 {
+    width: 100%;
+}
+.caption0{
+    background-color: #e661c9;
+}
+.caption1{
+    background-color: #39b3b3;
+}
+.caption2{
+    background-color: rgba(221, 245, 210, 0.945);
+}
+.computerlab img{
+    width: 1000px;;
+    height:400px;
+}
+.panel-default{
+    margin-top: 200px;
+    background-color: black;
+}
+input[type=text], select {
+   
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: rgba(238, 124, 17, 0.726);
+    color: white;
+    margin-top: 50px;
+    padding: 14px 20px;
+    border-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+form{
+    color: rgb(238, 217, 26);
+    font-size: 20px;
+    margin-top: 300px;
+    border-radius: 5px;
+    background-color:rgba(0, 0, 0, 0.425);
+    padding: 20px;
+    font-family: serif;
+}
+.rdate{
+    padding: 15px;
+}
+.sub{
+    background-color:rgba(238, 124, 17, 0.726) ;
+}
